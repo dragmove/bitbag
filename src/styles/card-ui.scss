@@ -1,0 +1,246 @@
+// default
+@import './normalize.scss';
+@import './reset.scss';
+@import './typo.scss';
+
+// custom
+@import './variables';
+@import './mixins';
+
+html,
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin: 0;
+  padding: 8rem 8rem;
+  width: 100%;
+}
+
+// layout
+.grid-wrap {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200rem; // to align horizontal center
+  height: 100%;
+  @include clearFix();
+
+  /*
+  // responsive mobile
+  &--h-card .grid-item {
+    width: 100%;
+  }
+  &--v-card .grid-item {
+    width: 50%;
+  }
+
+  // responsive tablet: 3 columns
+  @include responsive(tablet) {
+    &--v-card .grid-item {
+      width: 33.3333%;
+    }
+  }
+
+  // responsive desktop: 5 columns
+  @include responsive(desktop) {
+    &--v-card .grid-item {
+      width: 20%;
+    }
+  }
+  */
+}
+
+.grid-item {
+  position: relative;
+  display: block;
+  padding: 4rem 4rem;
+  float: left;
+  width: 100%;
+}
+
+// card
+.card {
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  border: 1rem solid $color-card-border;
+
+  &--radius {
+    border-radius: 5rem;
+  }
+
+  &--h {
+    padding-left: 125rem;
+    width: 350rem;
+    height: 125rem;
+  }
+  &--v {
+    max-width: 250rem;
+  }
+
+  &__img-wrap {
+    display: block;
+    width: 100%;
+    height: 250rem;
+    background-color: #ef5735;
+    overflow: hidden;
+
+    .card--h & {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 125rem;
+      height: 100%;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include FullSizeCoverBg('../img/szabo-viktor-28ZbKOWiZfs-unsplash.jpg');
+  }
+
+  &__contents {
+    position: relative;
+    padding: 6rem 10rem;
+    min-height: 100rem;
+
+    .card--h & {
+      padding: 12rem 12rem 0;
+      height: 125rem;
+    }
+  }
+
+  &__label {
+    font-family: Carme, Lato, Roboto, Ubuntu, san-serif;
+    @include text(13rem, $color-label);
+    @include singleLineEllipsis();
+  }
+
+  &__title {
+    padding: 2rem 0;
+    display: block;
+    width: 100%;
+    font-family: Lato, Roboto, Ubuntu, san-serif;
+    @include text(18rem, $color-title, bold);
+    @include singleLineEllipsis();
+
+    .card--h & {
+      padding: 0 0;
+      font-size: 15rem;
+    }
+  }
+
+  &__status {
+    &-wrap {
+      position: absolute;
+      display: block;
+      bottom: 6rem;
+      font-family: Lato, Roboto, Ubuntu, san-serif;
+    }
+
+    &-current {
+      @include text(12rem, $color-status-current);
+    }
+
+    &-prev {
+      @include text(10rem, $color-status-prev);
+      text-decoration: line-through;
+    }
+  }
+
+  &__extra-wrap {
+    position: absolute;
+    bottom: 16rem;
+    left: 10rem;
+    height: 16rem;
+  }
+
+  &__extra {
+    height: 60rem;
+    padding: 12rem 10rem;
+    font-size: 0;
+    border-top: 1px solid $color-card-border;
+
+    &--no-desc {
+      padding: 0rem 10rem;
+
+      .card__stars {
+        line-height: 60rem;
+      }
+    }
+
+    .card--h & {
+      padding: 0;
+      // display: block;
+      position: relative;
+      // bottom: 16rem;
+      // left: 10rem;
+      height: 16rem;
+      border: 0;
+    }
+  }
+
+  &__stars {
+    margin: auto 0;
+    font-size: 16rem;
+    line-height: 16rem;
+
+    .card--h & {
+      display: inline-block;
+    }
+  }
+
+  &__stars-item {
+    display: inline-block;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 9999rem;
+    background-color: #ccc;
+    @include hideText();
+
+    &--on {
+      background-color: #fdc62f;
+    }
+  }
+
+  &__desc {
+    margin: 8rem 0 0;
+    @include text(13rem, $color-desc);
+    @include singleLineEllipsis();
+
+    .card--h & {
+      font-size: 13rem;
+      text-overflow: clip;
+      white-space: normal;
+    }
+  }
+
+  &__divider {
+    margin: 0 8rem;
+    display: inline-block;
+    width: 1rem;
+    height: 12rem;
+    background-color: #999;
+  }
+
+  &__writer {
+    position: relative;
+    display: inline-block;
+    font-family: Lato, Roboto, Ubuntu, san-serif;
+    @include text(14rem, $color-writer);
+  }
+}

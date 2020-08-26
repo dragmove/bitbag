@@ -1,0 +1,15 @@
+$color-white: #fff;
+$color-black: #000;
+
+// Refer: https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px; // tablet
+$breakpoint-lg: 992px; // laptop, desktop
+$breakpoint-xl: 1200px; // max
+
+$is-retina-dpi: '(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)';

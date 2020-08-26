@@ -1,0 +1,132 @@
+// default
+@import './normalize.scss';
+@import './reset.scss';
+@import './typo.scss';
+
+// custom
+@import './variables';
+@import './mixins';
+
+/*
+html,
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+fieldset {
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 12rem 12rem 0;
+  width: 100%;
+  height: 100%;
+  font-family: Carme, Lato, Roboto, Ubuntu, san-serif;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+
+  &__fieldset {
+    display: block;
+    width: 100%;
+
+    .form--changed & {
+      padding-right: 100rem;
+    }
+  }
+  &__legend {
+    @include hideText();
+  }
+  &__label {
+    display: block;
+    width: 0;
+    height: 0;
+    @include hideText();
+  }
+
+  &__textarea-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  &__char-num {
+    position: absolute;
+    display: block;
+    bottom: 8rem;
+    right: 8rem;
+    @include text(11rem, #999);
+  }
+
+  &__textarea {
+    padding: 5rem;
+    display: block;
+    width: 100%;
+    height: 100rem;
+    font-family: 'Gothic A1', dotum, verdana, Arial, applegothic, sans-serif;
+    @include text(12rem, #555);
+    line-height: 14rem;
+    box-shadow: 2rem 2rem 5rem #999;
+    resize: none;
+
+    &:disabled {
+      background-color: $color-form-disabled;
+      color: $color-disabled;
+    }
+
+    &:read-only {
+      background-color: $color-form-readonly;
+      color: $color-readonly;
+    }
+  }
+
+  &__btn-save {
+    display: none;
+    width: 100rem;
+    height: 100rem;
+    background-color: #fff;
+    @include text(13rem, #555);
+    box-shadow: 2rem 2rem 5rem #999;
+    border: 1rem solid #777;
+
+    &:disabled {
+      background-color: $color-form-disabled;
+      color: $color-disabled;
+    }
+
+    .form--changed & {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.btn-toggle-disabled {
+  margin-top: 10rem;
+  display: block;
+  width: 100rem;
+  height: 25rem;
+  background-color: #fff;
+  font-size: 11rem;
+  border: 1rem solid #555;
+  border-radius: 5rem;
+}
+
+.btn-toggle-readonly {
+  margin-top: 10rem;
+  display: block;
+  width: 100rem;
+  height: 25rem;
+  background-color: #fff;
+  font-size: 11rem;
+  border: 1rem solid #555;
+  border-radius: 5rem;
+}
+*/
