@@ -5,6 +5,14 @@ import { fromEvent, of, forkJoin } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
 
 /*
+ * threads
+ */
+export function pause(milliseconds: number): void {
+  const start: number = Date.now();
+  while (Date.now() - start < milliseconds) {}
+}
+
+/*
  * base
  */
 export const hasOwnProp = Object.prototype.hasOwnProperty;
