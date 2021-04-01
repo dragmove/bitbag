@@ -28,6 +28,7 @@ import {
   getTapClick$,
   callAPIs$,
 } from './utils/utils';
+import { readonly, perf } from './utils/decorators';
 import { finalize } from 'rxjs/operators';
 
 import Emitter from './utils/emitter';
@@ -253,7 +254,68 @@ import { Subscription } from 'rxjs';
     log(isPositive(-9)); // false
     log(isNegative(-9)); // true
     log(isNegative(9)); // false
+
+    /*
+     * filter function
+     */
+
+    /*
+    type Filter = {
+      (array: number[], func: (item: number) => boolean): number[];
+      (array: string[], func: (item: string) => boolean): string[];
+    };
+    */
+    type Filter = <T>(array: T[], func: (item: T) => boolean) => T[];
+
+    function filter(array: any[], func: Function) {
+      let result = [];
+
+      let item;
+      for (let i = 0; i < array.length; i++) {
+        item = array[i];
+        if (func.call(null, item) === true) {
+          result.push(item);
+        }
+      }
+
+      return result;
+    }
+
+    console.log(
+      'filter :',
+      filter([1, 2, 3, 4], (v: number) => v > 3)
+    );
+  }
+
+  function testDecorator() {
+    class Rect {
+      protected width: number;
+      protected height: number;
+
+      constructor(width: number, height: number) {
+        this.width = width;
+        this.height = height;
+      }
+
+      @perf('Rect.init')
+      init(obj: unknown) {
+        return this;
+      }
+
+      @readonly
+      @perf('Rect.area')
+      area(): number {
+        return this.width * this.height;
+      }
+    }
+
+    const rect: Rect = new Rect(10, 90).init({
+      name: 'rect',
+    });
+    // [Rect.init]: 0.014999997802078724 ms
+    console.log('rect.area() :', rect.area());
   }
 
   init();
+  testDecorator();
 })();

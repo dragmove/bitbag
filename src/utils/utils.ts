@@ -600,4 +600,23 @@ export const getTapClick$ = (start$: any, end$: any) => {
   );
 };
 
+export const snakeToCamel = (str: string, includeDash: boolean = true) => {
+  // FIXME: ing
+  if (includeDash) {
+    // _ 도 포함하여 변경
+  } else {
+    // _ 만 변경
+  }
+
+  /*
+  // Ref: https://hisk.io/javascript-snake-to-camel/ 참고
+  const snakeToCamel = (str) => str.replace(
+    /([-_][a-z])/g,
+    (group) => group.toUpperCase()
+                    .replace('-', '')
+                    .replace('_', '')
+  );
+  */
+};
+
 // TODO: so-dirty 의 코드를 옮기는 중.
