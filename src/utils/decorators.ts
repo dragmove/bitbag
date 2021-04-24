@@ -14,10 +14,11 @@ export function readonly(target: any, propertyKey: string | symbol, descriptor: 
   return descriptor;
 }
 
-export function perf(title: string): MethodDecorator {
+export function perf(title: string, enable = true): MethodDecorator {
   return function (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) {
-    const fn = descriptor.value;
+    if (enable === false) return descriptor;
 
+    const fn = descriptor.value;
     if (typeof fn === 'function') {
       descriptor.value = function (...args: any[]) {
         const start = performance.now();

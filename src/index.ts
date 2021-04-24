@@ -304,6 +304,7 @@ import { Subscription } from 'rxjs';
 
       @readonly
       @perf('Rect.area')
+      // @perf('Rect.area', false)
       area(): number {
         return this.width * this.height;
       }
